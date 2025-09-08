@@ -1,0 +1,3 @@
+Web de cifrado de archivos en localhost:5000
+
+no es una web para probar ddos al ser medio grande y la pc en la que está alojada podria explotar

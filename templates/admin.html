@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel Admin</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <h1>Panel de Administrador</h1>
+  <p class="subtitle">Funciones exclusivas para admins</p>
+
+  <div class="container">
+    <div class="card">
+      <h2>Estadísticas Generales</h2>
+      <p>Total de imágenes procesadas: {{ stats.total_images if stats else "0" }}</p>
+      <p>Mensajes ocultos: {{ stats.hidden_messages if stats else "0" }}</p>
+    </div>
+
+<div class="card">
+  <h2>Funciones Extra</h2>
+  <ul>
+    <li><a href="{{ url_for('admin_activity') }}">Revisar actividad reciente</a></li>
+    <li><a href="{{ url_for('admin_users') }}">Administrar usuarios</a></li>
+    <li><a href="{{ url_for('admin_settings') }}">Configurar sistema</a></li>
+  </ul>
+</div>
+
+
+  <footer>
+    <a href="/">Inicio</a> |
+    <a href="/about">Acerca de</a> |
+    <a href="/credits">Créditos</a> |
+    <a href="/admin/logout">Cerrar sesión</a>
+  </footer>
+</body>
+</html>

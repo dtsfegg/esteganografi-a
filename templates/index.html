@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Esteganografía</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <h1>Esteganografía</h1>
+  <p class="subtitle">Esconde y revela mensajes secretos como hacker</p>
+  <p class="subtitle">Hecho por y para hackers</p>
+  <div class="container">
+    
+    <!-- Ocultar mensaje -->
+    <div class="card">
+      <h2>Ocultar mensaje</h2>
+      <form action="/hide" method="post" enctype="multipart/form-data" id="hideForm">
+        <div class="dropzone" id="hideDrop">Haz clic o arrastra aquí una imagen</div>
+        <input type="file" name="image" id="hideInput" accept="image/*" hidden required>
+        <img id="hidePreview" class="preview">
+        <textarea name="message" placeholder="Escribe tu mensaje secreto aquí..." required></textarea>
+        <button type="submit">Ocultar y Descargar</button>
+      </form>
+    </div>
+    
+    <!-- Revelar mensaje -->
+    <div class="card">
+      <h2>Revelar mensaje</h2>
+      <form action="/reveal" method="post" enctype="multipart/form-data" id="revealForm">
+        <div class="dropzone" id="revealDrop">Haz clic o arrastra aquí una imagen</div>
+        <input type="file" name="image" id="revealInput" accept="image/*" hidden required>
+        <img id="revealPreview" class="preview">
+        <button type="submit">Revelar mensaje</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Modal para mostrar el mensaje revelado -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal">&times;</span>
+      <h2>Mensaje revelado</h2>
+      <p id="decodedMessage"></p>
+    </div>
+  </div>
+
+  <footer>
+    <a href="/">Inicio</a> | 
+    <a href="/about">Acerca de</a> | 
+    <a href="/credits">Créditos</a>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
+
+ <a>Copyright © 2025 Govierno De RPQ<a>
+<a>Todos los derechos reservados.<a>
+ <a> </a>
+<a>hv mrgd frsldod wrgr or txh txlhudv<a>
+
